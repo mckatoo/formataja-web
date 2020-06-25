@@ -1,0 +1,56 @@
+# File              : .drone.yml
+# Author            : Milton Carlos Katoo <mckatoo@gmail.com>
+# Date              : 25.06.2020
+# Last Modified Date: 25.06.2020
+# Last Modified By  : Milton Carlos Katoo <mckatoo@gmail.com>
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  disable: true
+
+steps:
+- name: frontend
+  image: node:13.14.0
+  environment:
+  depends_on:
+  - backend
+  - sql
+  - database
+  commands:
+  - git clone git@github.com:mckatoo/formataja-web
+  - git checkout $DRONE_COMMIT
+  - sleep 30
+  - npm i
+  - npm run test
+
+- name: backend
+  image: node:12.18.0
+  environment:
+    DATABASE_URL: "postgresql://postgres:@database:5432/test?schema=public"
+  depends_on:
+  - sql
+  - database
+  commands:
+  - git clone git@github.com:mckatoo/formataja
+  - git checkout $DRONE_COMMIT
+  - sleep 20
+  - npm i
+  - npm run test
+
+- name: sql
+  image: postgres
+  depends_on:
+  - database
+  commands:
+  - sleep 10
+  - psql -U postgres -d test -h database -a -f database/database.sql
+
+services:
+- name: database
+  image: postgres
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_DB: test
+    POSTGRES_HOST_AUTH_METHOD: trust
