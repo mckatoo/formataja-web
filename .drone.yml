@@ -7,6 +7,9 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  disable: true
+
 steps:
 - name: frontend
   image: node:13.14.0
