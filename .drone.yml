@@ -44,6 +44,8 @@ steps:
   depends_on:
   - database
   commands:
+  - apt-get update;
+  - apt-get install -y --no-install-recommends git
   - git clone git@github.com:mckatoo/formataja
   - git checkout $DRONE_COMMIT
   - sleep 10
