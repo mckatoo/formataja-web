@@ -7,9 +7,6 @@ kind: pipeline
 type: docker
 name: default
 
-clone:
-  disable: true
-
 steps:
 - name: frontend
   image: node:13.14.0
@@ -19,23 +16,7 @@ steps:
   - sql
   - database
   commands:
-  - git clone git@github.com:mckatoo/formataja-web
-  - git checkout $DRONE_COMMIT
   - sleep 30
-  - npm i
-  - npm run test
-
-- name: backend
-  image: node:12.18.0
-  environment:
-    DATABASE_URL: "postgresql://postgres:@database:5432/test?schema=public"
-  depends_on:
-  - sql
-  - database
-  commands:
-  - git clone git@github.com:mckatoo/formataja
-  - git checkout $DRONE_COMMIT
-  - sleep 20
   - npm i
   - npm run test
 
@@ -46,8 +27,6 @@ steps:
   commands:
   - apt-get update;
   - apt-get install -y --no-install-recommends git
-  - git clone git@github.com:mckatoo/formataja
-  - git checkout $DRONE_COMMIT
   - sleep 10
   - psql -U postgres -d test -h database -a -f database/database.sql
 
@@ -58,3 +37,18 @@ services:
     POSTGRES_USER: postgres
     POSTGRES_DB: test
     POSTGRES_HOST_AUTH_METHOD: trust
+
+- name: backend
+  image: node:12.18.0
+  environment:
+    DATABASE_URL: "postgresql://postgres:@database:5432/test?schema=public"
+  depends_on:
+  - sql
+  - database
+  commands:
+  - git clone git@github.com:mckatoo/formataja api
+  - cd api
+  - sleep 20
+  - npm i
+  - npm run build
+  - npm run start
