@@ -7,6 +7,9 @@ kind: pipeline
 type: docker
 name: default
 
+clone:
+  disable: true
+
 steps:
 - name: frontend
   image: node:13.14.0
@@ -41,6 +44,8 @@ steps:
   depends_on:
   - database
   commands:
+  - apt-get update;
+  - apt-get install -y --no-install-recommends git
   - git clone git@github.com:mckatoo/formataja
   - git checkout $DRONE_COMMIT
   - sleep 10
