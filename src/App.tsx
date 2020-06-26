@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Adsense } from "react-adsense";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className="text-center adsbygoogle mt-2">
+        <Adsense client="ca-pub-7640562161899788" slot="7259870550" />
+      </div>
     </div>
   );
 }
