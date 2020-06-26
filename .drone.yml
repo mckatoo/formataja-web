@@ -1,7 +1,7 @@
 # File              : .drone.yml
 # Author            : Milton Carlos Katoo <mckatoo@gmail.com>
 # Date              : 25.06.2020
-# Last Modified Date: 25.06.2020
+# Last Modified Date: 26.06.2020
 # Last Modified By  : Milton Carlos Katoo <mckatoo@gmail.com>
 kind: pipeline
 type: docker
@@ -25,8 +25,6 @@ steps:
   depends_on:
   - database
   commands:
-  - apt-get update;
-  - apt-get install -y --no-install-recommends git
   - sleep 10
   - psql -U postgres -d test -h database -a -f database/database.sql
 
@@ -46,9 +44,9 @@ services:
   - sql
   - database
   commands:
-  - git clone git@github.com:mckatoo/formataja api
+  - git clone https://github.com/mckatoo/formataja api
   - cd api
-  - sleep 20
   - npm i
   - npm run build
+  - sleep 20
   - npm run start
