@@ -1,14 +1,12 @@
-import React, {Component} from "react";
-import {Link} from "@material-ui/core";
+import React from "react";
+import { Link } from "@material-ui/core";
 
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <Link href="/">Dashboard</Link>
-      </div>
-    );
-  }
+function Header() {
+  return (
+    <div>
+      <Link href="/">Dashboard</Link>
+    </div>
+  );
 }
 
 export default Header;
