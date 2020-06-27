@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Adsense } from '@ctrl/react-adsense'
 import api from "./services/api";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
+import Routes from "./routes";
 
 interface IUser {
 name: string;
@@ -18,20 +19,12 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  const [users, setUsers] = useState<IUser[]>([]);
   useEffect(() => {
-    api.post<IUser[]>("/login")
-    .then(response => {
-      setUsers(response.data);
-    });
   }, []);
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-      { users.map(user => <p>{user.name}</p>) }
-        <Button variant="contained" color="primary">
-          Olá Mundo
-        </Button>
+      <Routes />
       </div>
       <Adsense client= "ca-pub-4742247583682324" slot="6925301458" />
     </ThemeProvider>
