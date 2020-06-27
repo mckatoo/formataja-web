@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Dashboard extends Component {
-  render() {
-    return <div>Pagina Home</div>;
-  }
+function Dashboard() {
+  
 }
 
 export default Dashboard;
