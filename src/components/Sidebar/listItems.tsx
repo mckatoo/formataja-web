@@ -3,44 +3,115 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import PeopleIcon from "@material-ui/icons/People";
-import BarChartIcon from "@material-ui/icons/BarChart";
-import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import {
+  Warning,
+  Dashboard,
+  Book,
+  Check,
+  Favorite,
+  ThumbUp,
+  Notes,
+  List,
+  Receipt,
+  Toc,
+  Translate,
+  Forward,
+  VerticalAlignBottom,
+  AttachFile,
+} from "@material-ui/icons";
 
 export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <DashboardIcon />
+        <Dashboard />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Capa" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <Book />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Folha de Rosto" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <Warning />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Errata" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <Check />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Folha de Aprovação" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <Favorite />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Dedicatória" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <ThumbUp />
+      </ListItemIcon>
+      <ListItemText primary="Agradecimentos" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Translate />
+      </ListItemIcon>
+      <ListItemText primary="Epigrafe" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Notes />
+      </ListItemIcon>
+      <ListItemText primary="Resumo" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Notes />
+      </ListItemIcon>
+      <ListItemText primary="Abstract" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <List />
+      </ListItemIcon>
+      <ListItemText primary="Listas" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Toc />
+      </ListItemIcon>
+      <ListItemText primary="Sumário" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Receipt />
+      </ListItemIcon>
+      <ListItemText primary="Corpo" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Forward />
+      </ListItemIcon>
+      <ListItemText primary="Referências" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <VerticalAlignBottom />
+      </ListItemIcon>
+      <ListItemText primary="Apêndices" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <AttachFile />
+      </ListItemIcon>
+      <ListItemText primary="Anexos" />
     </ListItem>
   </div>
 );
