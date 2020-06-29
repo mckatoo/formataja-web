@@ -4,14 +4,12 @@ import IconButton from "@material-ui/core/IconButton";
 import useStyles from "../Styles";
 import { Drawer, Divider, List } from "@material-ui/core";
 import { ChevronLeft } from "@material-ui/icons";
-import {mainListItems, secondaryListItems} from "./listItems";
+import { mainListItems, secondaryListItems } from "./listItems";
 
-export default function Sidebar() {
+export default function Sidebar(props: any) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const open = props.open;
+  const toggleDrawer = props.toggleDrawer
 
   return (
     <Drawer
@@ -22,7 +20,7 @@ export default function Sidebar() {
       open={open}
     >
       <div className={classes.toolbarIcon}>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton onClick={toggleDrawer}>
           <ChevronLeft />
         </IconButton>
       </div>

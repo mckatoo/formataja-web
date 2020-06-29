@@ -9,10 +9,14 @@ import { Container, Grid, Paper, Box } from "@material-ui/core";
 function Dashboard() {
   const classes = useStyles;
   const fixedHeightPaper = clsx(classes().paper, classes().fixedHeight);
+  const [open, setOpen] = React.useState(true);
+  const toggleDrawer = () => {
+    open === true ? setOpen(false) : setOpen(true)
+  };
   return (
     <div className={classes().root}>
-      <Header />
-      <Sidebar />
+      <Header toggleDrawer={toggleDrawer} open={open} />
+      <Sidebar toggleDrawer={toggleDrawer} open={open} />
       <main className={classes().content}>
         <div className={classes().appBarSpacer} />
         <Container maxWidth="lg" className={classes().container}>
