@@ -2,12 +2,13 @@
  * @file             : index.ts
  * @author           : Milton Carlos Katoo <mckatoo@gmail.com>
  * Date              : 28.06.2020
- * Last Modified Date: 28.06.2020
+ * Last Modified Date: 30.06.2020
  * Last Modified By  : Milton Carlos Katoo <mckatoo@gmail.com>
  */
 import { makeStyles } from "@material-ui/core";
 
 const drawerWidth = 240;
+const widthPreview = 400;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,6 +87,11 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  preview: {
+    backgroundColor: theme.palette.grey[50],
+    width: widthPreview,
+    height: 141 * widthPreview / 100
+  }
 }));
 
 export default useStyles;
