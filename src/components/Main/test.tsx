@@ -4,13 +4,11 @@ import Main from '.'
 
 describe('<Main />', () => {
   it('should render the heading', () => {
-    const { container } = renderWithTheme(<Main />)
+    renderWithTheme(<Main />)
 
     expect(
       screen.getByRole('heading', { name: /DevNaRoça/i })
     ).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render the colors correctly', () => {
