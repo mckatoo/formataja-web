@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { act, fireEvent, screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import ToolTip from '.'
 
@@ -13,12 +13,14 @@ describe('<ToolTip />', () => {
     )
   })
 
-  it('should show tip on mouse over', () => {
+  it('should show tip on mouse over', async () => {
     const { container } = renderWithTheme(
       <ToolTip data-testid="iconTest" text="Texto de ajuda." />
     )
 
-    fireEvent.mouseOver(container.getElementsByTagName('svg')[0])
+    await act(async () => {
+      fireEvent.mouseOver(container.getElementsByTagName('svg')[0])
+    })
 
     expect(screen.getByText(/texto de ajuda./i)).toBeInTheDocument()
   })
