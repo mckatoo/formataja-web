@@ -51,6 +51,7 @@ export const TextArea = styled.textarea<TextAreaProps>`
     width: 100%;
     height: 140pt;
     white-space: nowrap;
+    margin-right: -24px;
   `}
 `
 
@@ -59,6 +60,20 @@ export const Label = styled.label`
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.black};
     cursor: pointer;
+  `}
+`
+
+export const Icon = styled.div`
+  ${({ theme }) => css`
+    align-self: start;
+    position: relative;
+    top: 0;
+    right: 0;
+    color: ${theme.colors.gray};
+    order: 1;
+    & > svg {
+      width: 2.2rem;
+    }
   `}
 `
 

@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0'
+import ToolTip from 'components/ToolTip'
 import TextArea, { TextAreaProps } from '.'
 
 export default {
@@ -21,6 +22,17 @@ export default {
 export const Default: Story<TextAreaProps> = (args) => (
   <div style={{ maxWidth: 600, padding: 15 }}>
     <TextArea {...args} />
+  </div>
+)
+
+export const WithToolTip: Story<TextAreaProps> = (args) => (
+  <div style={{ maxWidth: 600, padding: 15 }}>
+    <TextArea
+      {...args}
+      toolTip={
+        <ToolTip text="Aqui você pode descrever do que se trata este campo usando a propriedade text deste componente." />
+      }
+    />
   </div>
 )
 

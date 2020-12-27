@@ -3,6 +3,7 @@ import * as S from './styles'
 
 export type TextAreaProps = {
   onInput?: (value: string) => void
+  toolTip?: React.ReactNode
   label?: string
   initialValue?: string
   disabled?: boolean
@@ -13,6 +14,7 @@ const TextArea = ({
   label,
   initialValue = '',
   name,
+  toolTip,
   disabled = false,
   error,
   onInput,
@@ -31,6 +33,7 @@ const TextArea = ({
     <S.Wrapper disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       <S.TextAreaWrapper>
+        {!!toolTip && <S.Icon>{toolTip}</S.Icon>}
         <S.TextArea
           onChange={onChange}
           value={value}

@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import ToolTip from 'components/ToolTip'
 import React from 'react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import TextArea from '.'
@@ -21,6 +22,19 @@ describe('<TextArea />', () => {
     renderWithTheme(<TextArea placeholder="hey you" />)
 
     expect(screen.getByPlaceholderText('hey you')).toBeInTheDocument()
+  })
+
+  it('Renders with ToolTip', () => {
+    renderWithTheme(
+      <TextArea
+        data-testid="iconTest"
+        toolTip={<ToolTip text="Esta é uma dica." />}
+      />
+    )
+
+    expect(screen.getByTestId('iconTest').previousSibling).toHaveStyle({
+      order: 1
+    })
   })
 
   it('Does not changes its value when disabled', async () => {
