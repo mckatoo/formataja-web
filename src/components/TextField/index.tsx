@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, useState } from 'react'
-import * as Styles from './styles'
+import * as S from './styles'
 
 export type TextFieldProps = {
   onInput?: (value: string) => void
@@ -9,6 +9,7 @@ export type TextFieldProps = {
   iconPosition?: 'left' | 'right'
   disabled?: boolean
   error?: string
+  optional?: boolean
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({
@@ -19,6 +20,7 @@ const TextField = ({
   iconPosition = 'left',
   disabled = false,
   error,
+  optional,
   onInput,
   ...props
 }: TextFieldProps) => {
@@ -32,13 +34,12 @@ const TextField = ({
   }
 
   return (
-    <Styles.Wrapper disabled={disabled} error={!!error}>
-      {!!label && <Styles.Label htmlFor={name}>{label}</Styles.Label>}
-      <Styles.InputWrapper>
-        {!!icon && (
-          <Styles.Icon iconPosition={iconPosition}>{icon}</Styles.Icon>
-        )}
-        <Styles.Input
+    <S.Wrapper disabled={disabled} error={!!error}>
+      {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
+      {!!optional && <S.Optional>(optional)</S.Optional>}
+      <S.InputWrapper>
+        {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
+        <S.Input
           onChange={onChange}
           value={value}
           type="text"
@@ -47,9 +48,9 @@ const TextField = ({
           {...(label ? { id: name } : {})}
           {...props}
         />
-      </Styles.InputWrapper>
-      {!!error && <Styles.Error>{error}</Styles.Error>}
-    </Styles.Wrapper>
+      </S.InputWrapper>
+      {!!error && <S.Error>{error}</S.Error>}
+    </S.Wrapper>
   )
 }
 export default TextField

@@ -8,6 +8,7 @@ export type TextAreaProps = {
   initialValue?: string
   disabled?: boolean
   error?: string
+  optional?: boolean
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const TextArea = ({
@@ -17,6 +18,7 @@ const TextArea = ({
   toolTip,
   disabled = false,
   error,
+  optional,
   onInput,
   ...props
 }: TextAreaProps) => {
@@ -32,6 +34,7 @@ const TextArea = ({
   return (
     <S.Wrapper disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
+      {!!optional && <S.Optional>(optional)</S.Optional>}
       <S.TextAreaWrapper>
         {!!toolTip && <S.Icon>{toolTip}</S.Icon>}
         <S.TextArea

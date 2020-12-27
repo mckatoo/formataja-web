@@ -40,6 +40,12 @@ describe('<TextField />', () => {
     })
   })
 
+  it('Should show optional tag if optional property is present', () => {
+    renderWithTheme(<TextField optional />)
+
+    expect(screen.getByText(/(optional)/i)).toBeInTheDocument()
+  })
+
   it('Does not changes its value when disabled', async () => {
     const onInput = jest.fn()
     renderWithTheme(

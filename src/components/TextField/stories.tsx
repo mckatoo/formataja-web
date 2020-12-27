@@ -12,7 +12,8 @@ export default {
     id: 'Email',
     initialValue: '',
     placeholder: 'devnaroca@ikatoo.com.br',
-    error: ''
+    error: '',
+    optional: false
   },
   argTypes: {
     onInput: { action: 'changed' },

@@ -93,3 +93,14 @@ export const Error = styled.span<WrapperProps>`
     font-size: ${theme.font.sizes.xsmall};
   `}
 `
+
+export const Optional = styled.span`
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.xsmall};
+    font-weight: ${theme.font.bold};
+    text-align: right;
+    text-transform: uppercase;
+    float: right;
+  `}
+`
