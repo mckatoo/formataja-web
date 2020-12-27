@@ -31,6 +31,7 @@ const wrapperModifiers = {
 
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
+    /* width: fit-content; */
     display: flex;
     background: ${theme.colors.lightGray};
     border-radius: 0.2rem;
@@ -53,7 +54,8 @@ export const Input = styled.input<IconPositionProps>`
     background: transparent;
     border: 0;
     outline: none;
-    width: 21rem;
+    /* width: 21rem; */
+    width: 100%;
     white-space: nowrap;
   `}
 `
