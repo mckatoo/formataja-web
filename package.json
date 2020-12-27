@@ -33,6 +33,7 @@
     }
   },
   "dependencies": {
+    "@popperjs/core": "^2.6.0",
     "@styled-icons/heroicons-outline": "^10.19.0",
     "@styled-icons/ionicons-outline": "^10.18.0",
     "@styled-icons/material-outlined": "^10.18.0",
@@ -42,6 +43,7 @@
     "react": "16.14.0",
     "react-dom": "16.13.1",
     "react-html-parser": "^2.0.2",
+    "react-popper": "^2.2.4",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2"
   },
