@@ -44,6 +44,7 @@
     "react-dom": "16.13.1",
     "react-html-parser": "^2.0.2",
     "react-popper": "^2.2.4",
+    "react-slick": "^0.27.13",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2"
   },
