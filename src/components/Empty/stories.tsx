@@ -7,7 +7,7 @@ export default {
   component: Empty,
   parameters: {
     backgrounds: {
-      default: 'won-dark'
+      default: 'ikatoo-dark'
     }
   }
 } as Meta
