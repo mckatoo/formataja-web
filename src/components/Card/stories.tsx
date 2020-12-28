@@ -8,7 +8,7 @@ export default {
   args: {
     title: 'A importância da IA em nossas vidas.',
     college: 'Uniesi',
-    img: 'https://source.unsplash.com/user/willianjusten/300x140'
+    img: 'https://source.unsplash.com/user/mckatoo/300x140'
   },
   argTypes: {
     onFavorite: { action: 'clicked' },
@@ -18,7 +18,7 @@ export default {
   },
   parameters: {
     backgrounds: {
-      default: 'won-dark'
+      default: 'ikatoo-dark'
     }
   }
 } as Meta

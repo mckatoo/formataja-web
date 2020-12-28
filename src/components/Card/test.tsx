@@ -7,7 +7,7 @@ import Card from '.'
 const cardProps = {
   title: 'A importância da IA em nossas vidas.',
   college: 'Uniesi',
-  img: 'https://source.unsplash.com/user/willianjusten/300x140'
+  img: 'https://source.unsplash.com/user/mckatoo/300x140'
 }
 
 describe('<Card />', () => {
