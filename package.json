@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@popperjs/core": "^2.6.0",
+    "@popperjs/core": "^2.11.8",
     "@styled-icons/heroicons-outline": "^10.19.0",
     "@styled-icons/ionicons-outline": "^10.18.0",
     "@styled-icons/material-outlined": "^10.18.0",
