@@ -59,7 +59,7 @@
     "@storybook/react": "^6.1.11",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
-    "@testing-library/user-event": "^12.6.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^26.0.13",
     "@types/node": "^14.6.4",
     "@types/react": "^17.0.0",
